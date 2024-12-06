@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>인디자인페이스 | Beauty Design Group</title>
-    <meta name="description" content="인디자인페이스 - 자연의 이치에 과학을 더한 프리미엄 에스테틱. QR코드 연결 전용 모바일 최적화 페이지">
-
-    <!-- 예시: GA 연동 (추적ID 필요) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR_GA_TRACKING_ID');
-    </script> -->
+    <meta name="description" content="인디자인페이스 - 자연의 이치에 과학을 더한 프리미엄 에스테틱. 모바일 최적화, QR코드 접근 전용.">
 
     <style>
         :root {
@@ -37,6 +28,7 @@
             padding: 20px;
         }
 
+        /* 헤더 */
         header {
             background: var(--main-color);
             color: #fff;
@@ -57,32 +49,8 @@
             font-weight: bold;
         }
 
-        nav[role="navigation"] ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            align-items: center;
-        }
-
-        nav[role="navigation"] a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            display: inline-block;
-            padding: 8px 10px;
-        }
-
-        nav[role="navigation"] a:hover,
-        nav[role="navigation"] a:focus {
-            background: rgba(255,255,255,0.1);
-            border-radius: 5px;
-        }
-
         .hamburger {
-            display: none;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 5px;
@@ -104,11 +72,11 @@
             right: 0;
             height: 100%;
             width: 0;
-            background: rgba(56, 29, 111, 0.95);
+            background: rgba(56,29,111,0.95);
             overflow-x: hidden;
             transition: width 0.3s ease;
             z-index: 999;
-            padding-top: 80px;
+            padding-top: 70px;
         }
 
         .mobile-nav-overlay ul {
@@ -126,11 +94,9 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
-            padding: 10px;
         }
 
-        .mobile-nav-overlay a:hover,
-        .mobile-nav-overlay a:focus {
+        .mobile-nav-overlay a:hover {
             text-decoration: underline;
         }
 
@@ -138,7 +104,7 @@
             width: 100%;
         }
 
-        .mobile-nav-overlay button.close-btn {
+        .mobile-nav-overlay .close-btn {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -155,7 +121,7 @@
             color: #000;
             text-align: center;
             padding: 10px;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .top-banner strong {
@@ -189,7 +155,7 @@
         .main-visual h2 {
             font-size: 1.8rem;
             margin: 0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
         }
 
         .main-visual p {
@@ -198,7 +164,7 @@
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
 
         .btn-primary {
@@ -209,14 +175,12 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s, transform 0.1s;
+            transition: background 0.3s;
             font-size: 1rem;
         }
 
-        .btn-primary:hover,
-        .btn-primary:focus {
+        .btn-primary:hover {
             background: #7a5a9a;
-            transform: scale(1.05);
         }
 
         section {
@@ -231,7 +195,7 @@
             margin-bottom: 30px;
         }
 
-        /* 브랜드 스토리 개선 */
+        /* 브랜드 스토리 간단화 */
         .brand-story {
             background: #fff;
             text-align: center;
@@ -242,38 +206,13 @@
         }
 
         .brand-story p {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto 20px;
-            line-height: 1.7;
+            line-height: 1.6;
             font-size: 0.95rem;
         }
 
-        .brand-story-img {
-            max-width: 200px;
-            border-radius: 100px;
-            margin-bottom: 20px;
-        }
-
-        .icon-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .icon-group div {
-            flex: 0 1 100px;
-            text-align: center;
-        }
-
-        .icon-group img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-        }
-
-        /* 프로그램 표, 할인 혜택, 후기 등은 이전과 동일하지만 폰트크기, 패딩 등 약간 축소 */
+        /* 프로그램, 할인 혜택, 후기 등은 단순화: 폰트 사이즈 약간 작게 */
         .program-list table, .trial-table {
             width: 100%;
             border-collapse: collapse;
@@ -300,6 +239,7 @@
         .discount-section h4 {
             font-size: 1.2rem;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .discount-list {
@@ -309,12 +249,12 @@
         }
 
         .discount-item {
-            flex: 1 1 calc(33% - 15px);
+            flex: 1 1 calc(100% - 30px);
             background: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             padding: 15px;
             text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .discount-item h5 {
@@ -325,17 +265,15 @@
 
         .review-list {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 15px;
-            justify-content: center;
         }
 
         .review-item {
             background: #fff;
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            flex: 0 1 calc(100% - 30px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             font-size: 0.9rem;
         }
 
@@ -343,10 +281,6 @@
             margin-top: 10px;
             font-weight: bold;
             color: var(--accent-color);
-        }
-
-        .review-item:last-child {
-            margin-bottom: 0;
         }
 
         .info p {
@@ -419,21 +353,20 @@
 
         .sns-feed {
             display: flex;
-            flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .sns-feed img {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
             border-radius: 5px;
         }
 
-        /* FAQ 섹션 추가 */
         .faq-section {
-            background: #ffffff;
+            background: #fff;
             padding: 20px;
         }
 
@@ -485,29 +418,11 @@
             font-size: 0.9rem;
         }
 
-        /* 챗봇/상담 버튼 (우측 하단 고정) */
-        .chat-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent-color);
-            color: #fff;
-            border-radius: 50%;
-            width: 50px; height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        .chat-btn:hover {
-            background: #7a5a9a;
-        }
-
         @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
             header h1 {
                 font-size: 1.4rem;
             }
@@ -520,35 +435,27 @@
                 font-size: 0.95rem;
             }
 
-            .brand-story p {
-                font-size: 0.85rem;
-            }
-
-            .discount-item, .review-item {
+            .discount-item {
                 flex: 0 1 100%;
             }
 
+            .review-list {
+                gap: 10px;
+            }
+
             .sns-feed img {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
         }
     </style>
 </head>
 <body id="top">
+
     <header>
         <div class="inner">
             <h1>인디자인페이스</h1>
-            <nav role="navigation" aria-label="주 메뉴">
-                <ul>
-                    <li><a href="#services">프로그램 소개</a></li>
-                    <li><a href="#trial">체험</a></li>
-                    <li><a href="#reviews">후기</a></li>
-                    <li><a href="#info">오시는 길</a></li>
-                    <li><a href="#reservation">예약하기</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" aria-label="메인 메뉴 열기" aria-expanded="false" aria-controls="mobile-nav-overlay" type="button">
+            <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav-overlay">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -556,10 +463,8 @@
         </div>
     </header>
 
-    <!-- 한정 프로모션 배너 -->
     <div class="top-banner">
-        <strong>신규 고객 10% 할인</strong> 이번 주까지! 지금 예약하면 추가 서비스 증정! 
-        <a class="btn-primary" href="#reservation" style="margin-left:10px; font-size:0.9rem;">예약하기</a>
+        <strong>신규 고객 10% 할인</strong> 이번 주까지! 지금 예약하시면 추가 서비스 증정!
     </div>
 
     <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true">
@@ -575,54 +480,27 @@
 
     <div class="main-visual">
         <h2>내외적 아름다움의 하모니</h2>
-        <p>인디자인페이스에서 내 피부, 내 헤어, 내 바디를 위한 특별한 솔루션을 만나보세요.</p>
+        <p>인디자인페이스에서 맞춤형 프리미엄 에스테틱을 경험해보세요.</p>
         <a class="btn-primary" href="#reservation">지금 예약하기</a>
     </div>
 
-    <!-- 브랜드 스토리 / USP 강조 -->
     <section class="brand-story">
-        <h3>인디자인페이스, 우리의 특별함</h3>
-        <img src="https://picsum.photos/200/200?random=7" alt="브랜드 대표 이미지" class="brand-story-img">
-        <p>
-            20년 경력 테라피스트, 피부과 전문 자문, 고품질 제품 사용.  
-            단순 관리가 아닌 당신의 라이프스타일을 반영한 맞춤형 케어를 제공합니다.
-        </p>
-        <div class="icon-group">
-            <div>
-                <img src="https://via.placeholder.com/50" alt="전문성 아이콘">
-                <p>전문성</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/50" alt="신뢰 아이콘">
-                <p>신뢰</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/50" alt="지속 케어 아이콘">
-                <p>지속 관리</p>
-            </div>
-        </div>
-        <p>Before/After 사례 확인: <a href="#" style="color:var(--accent-color); text-decoration:underline;">사례보기</a></p>
+        <h3>인디자인페이스, 우리의 철학</h3>
+        <p>20년 이상의 경력과 전문성을 바탕으로, 피부과 전문 자문과 고품질 제품을 사용한 맞춤 케어를 제공합니다.  
+        단순한 시술이 아닌 고객님의 라이프스타일까지 고려한 토탈 뷰티 솔루션을 제안합니다.</p>
         <a class="btn-primary" href="#services">프로그램 알아보기</a>
     </section>
 
-    <!-- 프로그램, 할인 혜택, 체험 등 기존 콘텐츠 동일 -->
     <section id="services">
         <h3>프로그램 소개</h3>
-        <!-- (이하 프로그램 테이블, 할인 혜택, Q&A 본문 동일) -->
-        <!-- 프로그램, 할인 섹션, Q&A 유지 -->
-        <!-- ... 기존 내용 붙여넣기 ... -->
-        
-        <!-- 예시: 기존 내용 그대로 유지 -->
-        <!-- 메디컬스킨, 힐링 전신바디, 다이어트 케어, 두피 케어 프로그램 테이블 -->
-        <!-- 할인 섹션, 두피케어 Q&A, CTA -->
-        <!-- 이 코멘트 위치에 이전 사용자에게 제공했던 테이블 및 섹션 그대로 삽입 -->
-        
-        <!-- 체험 프로그램 섹션 -->
+        <!-- 여기에 메디컬스킨, 전신바디, 다이어트, 두피 케어 프로그램 테이블, 할인혜택 섹션, Q&A 삽입 -->
+        <!-- 프로그램 소개, 할인, Q&A, CTA 유지 (이전 제공 내용 그대로) -->
+        <!-- 필요시 이전 코드에서 프로그램 테이블 및 할인 섹션 동일하게 복붙 -->
     </section>
 
     <section id="trial">
         <h3>AI 메디컬스킨 체험가 프로그램</h3>
-        <!-- 체험가 프로그램 테이블 및 CTA 유지 -->
+        <!-- 체험가 프로그램 테이블, 안내문, CTA 유지 -->
     </section>
 
     <section id="reviews">
@@ -643,53 +521,44 @@
 
     <section class="newsletter">
         <h3>이벤트 & 팁 받아보기</h3>
-        <p>정기적인 스킨케어 팁, 시즌별 이벤트, 할인 혜택 정보를 가장 먼저 받아보세요!</p>
+        <p>정기적인 스킨케어 팁, 시즌별 이벤트, 할인 혜택 정보를 받아보세요!</p>
         <form action="#" method="post">
-            <input type="email" name="email" placeholder="이메일 주소를 입력하세요" required>
+            <input type="email" name="email" placeholder="이메일 주소" required>
             <button type="submit">구독하기</button>
         </form>
     </section>
 
     <section class="sns-section">
         <h3>인디자인페이스 인스타그램</h3>
-        <p>최신 시술 사례, 일상 스토리, 이벤트 소식 실시간 업로드</p>
+        <p>최신 시술 사례, 이벤트 소식을 실시간 확인하세요.</p>
         <div class="sns-feed">
-            <!-- 실제 연동 어려우므로 샘플 이미지 -->
-            <img src="https://picsum.photos/80/80?random=1" alt="인스타그램 이미지 1">
-            <img src="https://picsum.photos/80/80?random=2" alt="인스타그램 이미지 2">
-            <img src="https://picsum.photos/80/80?random=3" alt="인스타그램 이미지 3">
-            <img src="https://picsum.photos/80/80?random=4" alt="인스타그램 이미지 4">
+            <!-- 실제 연동 어려우니 샘플 이미지 -->
+            <img src="https://picsum.photos/60/60?random=1" alt="인스타 이미지1">
+            <img src="https://picsum.photos/60/60?random=2" alt="인스타 이미지2">
+            <img src="https://picsum.photos/60/60?random=3" alt="인스타 이미지3">
         </div>
-        <p style="margin-top:20px;">
+        <p style="margin-top:10px;">
             <a href="https://www.instagram.com/indesignface" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:underline;">인스타그램 바로가기</a>
         </p>
     </section>
 
-    <!-- FAQ 섹션 -->
     <section class="faq-section">
         <h3>자주 묻는 질문</h3>
         <div class="faq-item">
-            <strong>Q. 예약 취소나 변경은 어떻게 하나요?</strong>
-            <p>A. 네이버 예약 페이지 또는 전화로 문의하시면 친절히 도와드립니다.</p>
+            <strong>Q. 예약 변경은 어떻게 하나요?</strong>
+            <p>A. 네이버 예약 페이지 또는 전화 문의로 처리 가능합니다.</p>
         </div>
         <div class="faq-item">
-            <strong>Q. 주차는 가능한가요?</strong>
-            <p>A. 매장 앞 주차 가능하며, 인근 유료주차장도 이용하실 수 있습니다.</p>
-        </div>
-        <div class="faq-item">
-            <strong>Q. 남성 고객도 이용 가능한가요?</strong>
-            <p>A. 물론입니다. 남녀 모두 맞춤형 케어를 제공하고 있습니다.</p>
+            <strong>Q. 주차 가능 여부?</strong>
+            <p>A. 매장 앞 주차 가능, 인근 유료주차장도 이용 가능합니다.</p>
         </div>
     </section>
 
     <footer>
         <a class="back-to-top" href="#top">맨 위로 가기</a>
-        <p>&copy; 2024 인디자인페이스 Beauty Design Group Since 2001. All Rights Reserved.</p>
+        <p>&copy; 2024 인디자인페이스. All Rights Reserved.</p>
         <p><a href="#">개인정보처리방침</a> | <a href="#">이용약관</a></p>
     </footer>
-
-    <!-- 챗봇/상담 버튼 (기능 미구현 예시) -->
-    <a href="#" class="chat-btn" aria-label="상담하기">💬</a>
 
     <script>
         const hamburger = document.querySelector('.hamburger');
