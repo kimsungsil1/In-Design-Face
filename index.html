@@ -195,7 +195,6 @@
             margin-bottom: 30px;
         }
 
-        /* 브랜드 스토리 간단화 */
         .brand-story {
             background: #fff;
             text-align: center;
@@ -212,7 +211,6 @@
             font-size: 0.95rem;
         }
 
-        /* 프로그램, 할인 혜택, 후기 등은 단순화: 폰트 사이즈 약간 작게 */
         .program-list table, .trial-table {
             width: 100%;
             border-collapse: collapse;
@@ -246,10 +244,11 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
+            justify-content: center;
         }
 
         .discount-item {
-            flex: 1 1 calc(100% - 30px);
+            flex: 0 1 100%;
             background: #fff;
             border-radius: 10px;
             padding: 15px;
@@ -486,31 +485,140 @@
 
     <section class="brand-story">
         <h3>인디자인페이스, 우리의 철학</h3>
-        <p>20년 이상의 경력과 전문성을 바탕으로, 피부과 전문 자문과 고품질 제품을 사용한 맞춤 케어를 제공합니다.  
+        <p>20년 이상의 경력과 전문성을 바탕으로, 피부과 전문 자문과 고품질 제품을 사용한 맞춤 케어를 제공합니다.<br>
         단순한 시술이 아닌 고객님의 라이프스타일까지 고려한 토탈 뷰티 솔루션을 제안합니다.</p>
         <a class="btn-primary" href="#services">프로그램 알아보기</a>
     </section>
 
     <section id="services">
         <h3>프로그램 소개</h3>
-        <!-- 여기에 메디컬스킨, 전신바디, 다이어트, 두피 케어 프로그램 테이블, 할인혜택 섹션, Q&A 삽입 -->
-        <!-- 프로그램 소개, 할인, Q&A, CTA 유지 (이전 제공 내용 그대로) -->
-        <!-- 필요시 이전 코드에서 프로그램 테이블 및 할인 섹션 동일하게 복붙 -->
+
+        <div class="program-group">
+            <h4>메디컬스킨 케어 프로그램</h4>
+            <div class="program-list">
+                <table>
+                    <tr><th>시술명</th><th>정가</th></tr>
+                    <tr><td>물광필테라피</td><td>59,000원</td></tr>
+                    <tr><td>카복시 CO2</td><td>69,000원</td></tr>
+                    <tr><td>링클톡신테라피</td><td>69,000원</td></tr>
+                    <tr><td>쟈크 테라피</td><td>99,000원</td></tr>
+                    <tr><td>물결주사테라피</td><td>99,000원</td></tr>
+                    <tr><td>콜라겐에이징테라피</td><td>99,000원</td></tr>
+                    <tr><td>지우개주사테라피</td><td>159,000원</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="program-group">
+            <h4>힐링 전신바디 케어 프로그램</h4>
+            <div class="program-list">
+                <table>
+                    <tr><th>시술명</th><th>정가</th></tr>
+                    <tr><td>전신바바웨이 테라피(80분)</td><td>199,000원</td></tr>
+                    <tr><td>전신 엔더몰로지(50분)</td><td>199,000원</td></tr>
+                    <tr><td>전신스카 테라피</td><td>199,000원</td></tr>
+                    <tr><td>전신수기 테라피(80분)</td><td>219,000원</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="program-group">
+            <h4>다이어트 케어 프로그램</h4>
+            <div class="program-list">
+                <table>
+                    <tr><th>시술명</th><th>정가</th></tr>
+                    <tr><td>소닉 셀룰라이트 분해관리</td><td>49,000원</td></tr>
+                    <tr><td>포인트핏 군살관리</td><td>79,000원</td></tr>
+                    <tr><td>전신드림빠 파뇨 디톡스(50분)</td><td>129,000원</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="program-group">
+            <h4>두피 케어 프로그램</h4>
+            <div class="program-list">
+                <table>
+                    <tr><th>시술명</th><th>정가</th></tr>
+                    <tr><td>힐링 산소 스케일링</td><td>89,000원</td></tr>
+                    <tr><td>MTS제포 강화관리</td><td>129,000원</td></tr>
+                    <tr><td>단/다발성 원형탈모 케어</td><td>149,000원</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="discount-section">
+            <h4>할인 혜택</h4>
+            <div class="discount-list">
+                <div class="discount-item">
+                    <h5>AI 메디컬스킨 케어 20% 할인권</h5>
+                    <p>[6회 관리 시 추가 10% 할인]<br>※ 체험가 프로그램 적용 불가 / 추가할인 불가</p>
+                </div>
+                <div class="discount-item">
+                    <h5>다이어트 케어 25% 할인권</h5>
+                    <p>[6회 관리 시 추가 10% 할인]<br>※ 체험가 프로그램 적용 불가 / 추가할인 불가</p>
+                </div>
+                <div class="discount-item">
+                    <h5>두피탈모 케어 40% 할인권</h5>
+                    <p>[6회 관리 시 추가 10% 할인]<br>※ 체험가 프로그램 적용 불가 / 추가할인 불가</p>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size:0.9rem; text-align:center; color:#666;">
+            <strong>Q. 두피케어 왜 받아야하나요?</strong><br>
+            혈액 순환 장애로 약해진 모근을 강화하고 건강한 모발 성장 환경을 조성합니다.<br>
+            피지, 각질, 불순물을 제거하고 산소와 영양분 공급을 최적화하여 모발 성장을 촉진합니다.
+        </p>
+
+        <div style="text-align:center; margin-top:20px;">
+            <a class="btn-primary" href="#reservation">지금 예약하고 할인받기</a>
+        </div>
     </section>
 
     <section id="trial">
         <h3>AI 메디컬스킨 체험가 프로그램</h3>
-        <!-- 체험가 프로그램 테이블, 안내문, CTA 유지 -->
+        <table class="trial-table">
+            <tr>
+                <th>시술명</th><th>정가</th><th>체험가</th>
+            </tr>
+            <tr><td>하이푸울킵세라(300샷)</td><td>99,000원</td><td>49,000원</td></tr>
+            <tr><td>울트라 써마젯(300샷)</td><td>199,000원</td><td>99,000원</td></tr>
+            <tr><td>여드름 문제성피부 AC프코몽관리</td><td>69,000원</td><td>49,000원</td></tr>
+            <tr><td>홍조, 모공 문제성피부 트리플토닝</td><td>159,000원</td><td>89,000원</td></tr>
+            <tr><td>최첨단 엑소 줌 엑소 에이징 테라피</td><td>179,000원</td><td>99,000원</td></tr>
+        </table>
+        <p style="font-size:0.9rem; text-align:center; color:#666;">
+            체험가 프로그램은 관찬을 겸비한 AI 메디컬장비로 추가할인은 불가하며,<br>
+            1일 실습숙 5명 한정입니다.
+        </p>
+        <div style="text-align:center;">
+            <a class="btn-primary" href="#reservation">체험가 예약하기</a>
+        </div>
     </section>
 
     <section id="reviews">
         <h3>고객 후기</h3>
-        <!-- 후기 리스트 유지 -->
+        <div class="review-list">
+            <div class="review-item">
+                <p>"메디컬스킨 케어 받고 나서 피부톤이 맑아지고 탄력도 살아났어요! 세심한 상담 덕에 더 믿음이 갔습니다."</p>
+                <span class="customer">- 김미영 님</span>
+            </div>
+            <div class="review-item">
+                <p>"두피 케어 프로그램 받고 나니 머리결이 한결 건강해졌어요. 믿고 맡길 수 있는 곳이라 재방문 의사 100%입니다."</p>
+                <span class="customer">- 박준현 님</span>
+            </div>
+            <div class="review-item">
+                <p>"다이어트 케어 관리 후 군살 정리에 도움이 많이 됐어요. 특별한 관리법으로 자신감이 생겼습니다."</p>
+                <span class="customer">- 이소라 님</span>
+            </div>
+        </div>
     </section>
 
     <section id="info" class="info">
         <h3>오시는 길 & 정보</h3>
-        <!-- 주소, 영업시간, 문의전화 유지 -->
+        <p><span class="highlight">주소:</span> 경북 포항시 남구 대이로 185 1층 (주소를 길게 눌러 복사 가능)</p>
+        <p><span class="highlight">영업시간:</span> 평일 10:00 ~ 20:00 / 토요일 10:00 ~ 17:00 / 일요일 휴무</p>
+        <p><span class="highlight">문의전화:</span> <a href="tel:0212345678" style="text-decoration:none;color:var(--accent-color);font-weight:bold;">02-1234-5678 전화걸기</a></p>
     </section>
 
     <section id="reservation" class="reservation">
@@ -532,7 +640,6 @@
         <h3>인디자인페이스 인스타그램</h3>
         <p>최신 시술 사례, 이벤트 소식을 실시간 확인하세요.</p>
         <div class="sns-feed">
-            <!-- 실제 연동 어려우니 샘플 이미지 -->
             <img src="https://picsum.photos/60/60?random=1" alt="인스타 이미지1">
             <img src="https://picsum.photos/60/60?random=2" alt="인스타 이미지2">
             <img src="https://picsum.photos/60/60?random=3" alt="인스타 이미지3">
