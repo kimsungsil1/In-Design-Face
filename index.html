@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>인디자인페이스 | Beauty Design Group</title>
     <meta name="description" content="인디자인페이스 - 자연의 이치에 과학을 더한 프리미엄 에스테틱. 메디컬스킨, 전신바디 케어, 다이어트, 두피 케어 프로그램과 다양한 체험가 혜택을 만나보세요.">
+
     <style>
         :root {
-            --main-color: #381D6F; 
+            --main-color: #381D6F;
             --accent-color: #8667A9;
             --text-color: #333;
             --bg-color: #f9f9f9;
@@ -20,6 +21,7 @@
             background: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            font-size: 16px;
         }
 
         header, footer, section {
@@ -46,7 +48,8 @@
             font-weight: bold;
         }
 
-        nav ul {
+        /* Desktop nav */
+        nav[role="navigation"] ul {
             list-style: none;
             padding: 0;
             display: flex;
@@ -54,7 +57,7 @@
             margin: 0;
         }
 
-        nav a {
+        nav[role="navigation"] a {
             color: #fff;
             text-decoration: none;
             font-weight: 500;
@@ -62,11 +65,12 @@
             font-size: 1rem;
         }
 
-        nav a:hover {
+        nav[role="navigation"] a:hover,
+        nav[role="navigation"] a:focus {
             opacity: 0.8;
         }
 
-        /* 햄버거 버튼 (모바일용) */
+        /* Hamburger button */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -82,27 +86,60 @@
             display: block;
         }
 
-        .mobile-nav {
-            display: none;
-            background: var(--main-color);
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            border-radius: 5px;
-            padding: 10px;
+        /* Mobile nav overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0;
+            background: rgba(56, 29, 111, 0.95);
+            overflow-x: hidden;
+            transition: width 0.3s ease;
+            z-index: 999;
+            padding-top: 80px;
         }
 
-        .mobile-nav ul {
+        .mobile-nav-overlay ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 30px;
+            align-items: center;
         }
 
-        .mobile-nav.show {
-            display: block;
+        .mobile-nav-overlay a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
+        .mobile-nav-overlay a:hover,
+        .mobile-nav-overlay a:focus {
+            text-decoration: underline;
+        }
+
+        .mobile-nav-overlay.show {
+            width: 100%;
+        }
+
+        .mobile-nav-overlay button.close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main visual: Unsplash random beauty images */
         .main-visual {
-            background: url('https://picsum.photos/1200/600?grayscale') no-repeat center/cover;
+            background: url('https://source.unsplash.com/1200x600/?beauty,spa,skincare') no-repeat center/cover;
             color: #fff;
             text-align: center;
             padding: 100px 20px;
@@ -116,6 +153,9 @@
         .main-visual p {
             font-size: 1.1rem;
             margin: 20px 0 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-primary {
@@ -130,7 +170,8 @@
             font-size: 1rem;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover,
+        .btn-primary:focus {
             background: #7a5a9a;
         }
 
@@ -292,12 +333,16 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
             .inner {
                 flex-direction: row;
                 justify-content: space-between;
             }
 
-            nav ul {
+            nav[role="navigation"] ul {
                 display: none;
             }
 
@@ -314,7 +359,7 @@
             }
 
             .main-visual h2 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
 
             .main-visual p {
@@ -327,12 +372,12 @@
     <header>
         <div class="inner">
             <h1>인디자인페이스</h1>
-            <div class="hamburger" aria-label="메뉴 열기">
+            <button class="hamburger" aria-label="메인 메뉴 열기" aria-expanded="false" aria-controls="mobile-nav-overlay" type="button">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <nav>
+            </button>
+            <nav role="navigation" aria-label="주 메뉴">
                 <ul>
                     <li><a href="#services">프로그램 소개</a></li>
                     <li><a href="#trial">체험 프로그램</a></li>
@@ -341,17 +386,19 @@
                     <li><a href="#reservation">예약하기</a></li>
                 </ul>
             </nav>
-            <div class="mobile-nav">
-                <ul>
-                    <li><a href="#services">프로그램 소개</a></li>
-                    <li><a href="#trial">체험 프로그램</a></li>
-                    <li><a href="#reviews">후기</a></li>
-                    <li><a href="#info">오시는 길</a></li>
-                    <li><a href="#reservation">예약하기</a></li>
-                </ul>
-            </div>
         </div>
     </header>
+
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true">
+        <button class="close-btn" aria-label="메뉴 닫기">&times;</button>
+        <ul>
+            <li><a href="#services">프로그램 소개</a></li>
+            <li><a href="#trial">체험 프로그램</a></li>
+            <li><a href="#reviews">후기</a></li>
+            <li><a href="#info">오시는 길</a></li>
+            <li><a href="#reservation">예약하기</a></li>
+        </ul>
+    </div>
 
     <div class="main-visual">
         <h2>자연의 이치에 과학을 더하다</h2>
@@ -361,8 +408,7 @@
 
     <section id="services">
         <h3>프로그램 소개</h3>
-
-        <!-- 메디컬스킨 케어 프로그램 -->
+        <!-- 프로그램 및 할인정보, Q&A 유지 -->
         <div class="program-group">
             <h4>메디컬스킨 케어 프로그램</h4>
             <div class="program-list">
@@ -379,7 +425,6 @@
             </div>
         </div>
 
-        <!-- 힐링 전신바디 케어 프로그램 -->
         <div class="program-group">
             <h4>힐링 전신바디 케어 프로그램</h4>
             <div class="program-list">
@@ -393,7 +438,6 @@
             </div>
         </div>
 
-        <!-- 다이어트 케어 프로그램 -->
         <div class="program-group">
             <h4>다이어트 케어 프로그램</h4>
             <div class="program-list">
@@ -406,7 +450,6 @@
             </div>
         </div>
 
-        <!-- 두피 케어 프로그램 -->
         <div class="program-group">
             <h4>두피 케어 프로그램</h4>
             <div class="program-list">
@@ -419,7 +462,6 @@
             </div>
         </div>
 
-        <!-- 할인 혜택 섹션 -->
         <div class="discount-section">
             <h4>할인 혜택</h4>
             <div class="discount-list">
@@ -501,18 +543,28 @@
     </footer>
 
     <script>
-        // 모바일 햄버거 메뉴 토글
         const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const closeBtn = document.querySelector('.close-btn');
 
         hamburger.addEventListener('click', () => {
-            mobileNav.classList.toggle('show');
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            mobileNavOverlay.setAttribute('aria-hidden', expanded);
+            mobileNavOverlay.classList.toggle('show');
         });
 
-        // 모바일 네비게이션에서 링크 클릭 시 닫힘
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
+        closeBtn.addEventListener('click', () => {
+            hamburger.setAttribute('aria-expanded', false);
+            mobileNavOverlay.setAttribute('aria-hidden', true);
+            mobileNavOverlay.classList.remove('show');
+        });
+
+        document.querySelectorAll('.mobile-nav-overlay a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileNav.classList.remove('show');
+                hamburger.setAttribute('aria-expanded', false);
+                mobileNavOverlay.setAttribute('aria-hidden', true);
+                mobileNavOverlay.classList.remove('show');
             });
         });
     </script>
