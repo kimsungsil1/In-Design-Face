@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인디자인페이스</title>
+    <title>인디자인페이스 고객 전용, 뷰티혜택</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,67 +15,46 @@
         header {
             text-align: center;
             padding: 20px;
-            background-color: #381D6F; /* C85 M100 Y20 */
+            background-color: #381D6F; /* C85 M100 Y20에 해당하는 색상 */
             color: white;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
 
-        header p {
-            margin: 10px 0;
+        header a {
+            color: white;
+            text-decoration: underline;
             font-size: 1.2rem;
         }
 
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        nav a {
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #381D6F;
-            color: white;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #4a2785;
-        }
-
-        section {
+        .container {
             max-width: 1200px;
             margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .image-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            font-size: 1.5rem;
-            color: #381D6F;
-            margin-bottom: 15px;
-        }
-
-        section p {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #333;
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background: #381D6F;
+            background: #381D6F; /* C85 M100 Y20에 해당하는 색상 */
             color: white;
             font-size: 0.9rem;
         }
@@ -85,80 +64,28 @@
                 font-size: 1.5rem;
             }
 
-            nav a {
-                font-size: 0.9rem;
-                padding: 8px 15px;
+            header a {
+                font-size: 1rem;
             }
 
-            section h2 {
-                font-size: 1.2rem;
-            }
-
-            section p {
-                font-size: 0.9rem;
+            .container {
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>인디자인페이스</h1>
-        <p>QR 코드로 방문해주셔서 감사합니다! 다양한 혜택을 확인하세요.</p>
+        <h1>인디자인페이스 고객 전용, 뷰티혜택</h1>
+        <a href="https://indesignface.shop" target="_blank">우리 샵 네이버지도 방문하기</a>
     </header>
 
-    <nav>
-        <a href="#coupon">할인 쿠폰</a>
-        <a href="#reservation">예약하기</a>
-        <a href="#products">인기 제품</a>
-        <a href="#reviews">고객 후기</a>
-    </nav>
-
-    <section id="coupon">
-        <h2>🎉 특별 할인 쿠폰</h2>
-        <p>
-            QR 코드를 통해 방문한 고객님께 드리는 특별 혜택! 
-            <strong>10% 할인 쿠폰</strong>을 지금 바로 다운로드하세요.
-        </p>
-        <button style="padding: 10px 20px; background: #381D6F; color: white; border: none; border-radius: 5px;">
-            쿠폰 다운로드
-        </button>
-    </section>
-
-    <section id="reservation">
-        <h2>📅 간편 예약</h2>
-        <p>피부 관리, 메이크업, 헤어 스타일링 등 원하는 서비스를 온라인에서 간편하게 예약하세요.</p>
-        <button style="padding: 10px 20px; background: #381D6F; color: white; border: none; border-radius: 5px;">
-            예약 페이지로 이동
-        </button>
-    </section>
-
-    <section id="products">
-        <h2>🛍️ 인기 제품</h2>
-        <p>인디자인페이스의 베스트셀러 제품을 만나보세요. 사용법과 함께 특별 할인 혜택을 제공합니다.</p>
-        <ul style="list-style: none; padding: 0; display: flex; gap: 20px; justify-content: center;">
-            <li style="text-align: center;">
-                <img src="https://via.placeholder.com/150" alt="제품 1" style="border-radius: 10px;">
-                <p>제품 1</p>
-            </li>
-            <li style="text-align: center;">
-                <img src="https://via.placeholder.com/150" alt="제품 2" style="border-radius: 10px;">
-                <p>제품 2</p>
-            </li>
-            <li style="text-align: center;">
-                <img src="https://via.placeholder.com/150" alt="제품 3" style="border-radius: 10px;">
-                <p>제품 3</p>
-            </li>
-        </ul>
-    </section>
-
-    <section id="reviews">
-        <h2>⭐ 고객 후기</h2>
-        <p>실제 고객님의 솔직한 후기를 확인하세요. 여러분의 소중한 후기를 남겨주시면 감사하겠습니다!</p>
-        <textarea rows="5" placeholder="후기를 작성하세요..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-        <button style="padding: 10px 20px; background: #381D6F; color: white; border: none; border-radius: 5px; margin-top: 10px;">
-            후기 제출
-        </button>
-    </section>
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="https://raw.githubusercontent.com/kimsungsil1/In-Design-Face/main/1.jpg" alt="매뉴얼 이미지 1">
+            <img src="https://raw.githubusercontent.com/kimsungsil1/In-Design-Face/main/2.jpg" alt="매뉴얼 이미지 2">
+        </div>
+    </div>
 
     <footer>
         &copy; 2024 인디자인페이스. 모든 권리 보유.
